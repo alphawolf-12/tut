@@ -1,0 +1,35 @@
+
+.navbar{
+    width: 100vw;
+    height: 40px;
+    background-color: brown;
+    padding: 5px;
+}
+
+.flex--jfs{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.flex--jcc{
+    display: flex;
+    justify-content: space-between;
+}
+
+.log--btn{
+    padding: 5px;
+    background-color: green;
+}
+
+.card{
+    height: 30vh;
+    margin: 5%;
+    padding: 5%;
+    align-items: center;
+    background-color: brown;
+    color: white;
+    font-size: large;
+    font-weight: bold;
+    cursor: pointer;
+}
+
