@@ -1,9 +1,13 @@
 var path = require('path');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+
+
 const entry = './src/ui/index.js';
 const output = {
-    path: path.resolve(__dirname,'public'),
+    clean: true,
     filename: 'bundle.js',
-    publicPath: '/public'
+    path: path.resolve(__dirname,'public'),
+
 };
 const modules = {
     rules: [
@@ -23,10 +27,20 @@ const modules = {
       }
     ]
 };
+const plugins = [
+    new HtmlWebpackPlugin({
+        inject: true,
+        template: 'public/index.html'
+      })
+];
 
 module.exports = {
-    mode: "development",
+    mode: 'development',
+    plugins: plugins,    
     entry:entry, 
     output:output,
-    module:modules
+    module:modules,
+    devServer: {
+        contentBase: './public',
+      },
 }

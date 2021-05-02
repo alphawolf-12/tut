@@ -13,14 +13,23 @@ class HomePage extends Component{
         history.push(link);
     }
 
+    handleLogOut = () => {}
+
+    handleLogIn = () => {}
+
     render(){
         return (
         <div>
-            {"HELLO WORLD"}
-            {/* <NavBar />
-            {pageRoutes.map(ele => {
-                <Card name={ele.name} handleClick={ () => {this.navigateTo(ele.link)} } />
-            })} */}
+            <NavBar signOut={this.signOut}  />
+            <div style={{display: 'flex', flexWrap: 'wrap'}}>
+                {pageRoutes.map(ele => 
+                    <Card name={ele.name} 
+                      handleClick={ (ev) => { 
+                        ev.preventDefault(); this.navigateTo(ele.link)
+                    }}
+                    />
+                )}
+            </div>
         </div>
         )
     }
