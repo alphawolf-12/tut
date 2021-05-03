@@ -6,8 +6,8 @@ const entry = './src/ui/index.js';
 const output = {
     clean: true,
     filename: 'bundle.js',
-    path: path.resolve(__dirname,'public'),
-
+    path: path.resolve(__dirname,'./public'),
+    publicPath: '/public/'
 };
 const modules = {
     rules: [
@@ -28,10 +28,10 @@ const modules = {
     ]
 };
 const plugins = [
-    new HtmlWebpackPlugin({
-        inject: true,
-        template: 'public/index.html'
-      })
+    // new HtmlWebpackPlugin({
+    //     inject: true,
+    //     template: 'public/index.html'
+    //   })
 ];
 
 module.exports = {
